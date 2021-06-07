@@ -1,0 +1,22 @@
+#tbrow:hover
+{
+    box-shadow: 2px 2px 10px black;
+    border-radius: 5px;
+}
+
+a
+{
+    color: black;
+}
+
+a:hover
+{
+    color:red;
+    text-decoration: underline;
+}
+
+#btn:hover
+{
+ text-decoration: underline;
+ color: black;
+}

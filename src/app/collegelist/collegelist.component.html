@@ -1,0 +1,44 @@
+<!-- search input -->
+
+<div class="input-group w-sm-25 p-2 ">
+    <input type="text"  id="" placeholder="Search By College Name" class="form-control" [(ngModel)]="searchTerm" >
+</div>
+
+<!-- table for displaying data
+ -->
+
+<table class="table text-start container-fluid">
+    <tr class="p-2">
+        <th class="text-center"><i class="fab fa-slack-hash"></i></th>
+        <th class="text-center">College Name</th>
+        <th>Web Site</th>
+        <th>College Code</th>
+    </tr>
+    <tr *ngFor="let detail of collegelistdata | search : searchTerm ; let i=index " class="pt-4 mt-2" id="tbrow">
+        <td class="text-center">{{i+1}}</td>
+        <td class="text-center"><button type="button" class="btn shadow-none" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="getmodal(i)" id="btn">{{detail.name | uppercase}}</button></td>
+        <td id="link"><a class="nav-link text-start" href="{{detail.web_pages}}">Visit Us....</a></td>
+        <td class="text-center">{{detail.alpha_two_code}}</td>
+    </tr>
+</table>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" *ngFor="let modaldata of collegelistdata">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">{{modaldata.name | uppercase}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p class="text-muted">College County : {{modaldata.country}}</p>
+            <p  class="text-muted">College domain : {{modaldata.domains}}</p>
+            <p class="text-muted">College Code : {{modaldata.alpha_two_code}}</p>
+        </div>
+        <div class="modal-footer">
+          <a href="{{modaldata.web_pages}}"><button type="button" class="btn btn-info">continue..</button></a>
+        </div>
+      </div>
+    </div>
+  </div>

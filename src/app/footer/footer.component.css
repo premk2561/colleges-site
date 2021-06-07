@@ -1,0 +1,13 @@
+#footerdiv
+{
+    background-color: #161d6f;
+}
+
+li{
+    list-style-type: none;
+    padding: 1rem;
+}
+
+i{
+    color: white;
+}

@@ -1,0 +1,19 @@
+
+<!-- input for search -->
+<div class="container-fluid p-2">
+    <input type="text" class="form-control w-md-25 " placeholder="Search By College Name" [(ngModel)]='searchTerm'>
+</div>
+
+<div class="container">
+    <div class="row row-cols-1 g-3" >
+        <div class="col" *ngFor="let data1 of cardsdata | search:searchTerm ; let ind=index">
+            <div class="card m-3  p-2" >
+                <h4 class="fs-bold">College Name : {{data1.name}} <span class="badge bg-danger float-end">{{ind+1}}</span></h4>
+                <p class="text-muted">College County : {{data1.country}}</p>
+                <p  class="text-muted">College domain : {{data1.domains}}</p>
+                <p class="text-muted">College Code : {{data1.alpha_two_code}}</p>
+                <a href="{{data1.web_pages}}"> <button class="btn btn-success float-end">Details</button></a>
+            </div>
+        </div>
+    </div>
+</div>

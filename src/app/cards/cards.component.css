@@ -1,0 +1,15 @@
+.card
+{
+    border-left: 5px solid green;
+}
+
+.card:hover
+{
+    border-right: 5px solid red;
+    box-shadow: 3px 3px 9px grey;
+}
+
+p,h4
+{
+    font-family: 'Montserrat', sans-serif;
+}
